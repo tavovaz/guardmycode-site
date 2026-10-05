@@ -162,6 +162,14 @@ pre.snip .hit{color:var(--code-hit);font-weight:600}
 .deliv h3{font-size:1.2rem}
 .deliv p{color:var(--muted)}
 
+.promise{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:var(--ink);color:var(--bg);border-radius:var(--radius);padding:clamp(22px,4vw,34px);margin-bottom:28px}
+.promise svg{flex:none}
+.promise h3{font-size:var(--step-2);font-weight:800;color:var(--bg)}
+.promise p{opacity:.82;margin-top:6px}
+@media (max-width:640px){.promise{grid-template-columns:1fr}}
+#confianza .deliv{align-content:start}
+.pillar-head{margin:36px 0 16px;font-size:1.25rem;font-weight:800}
+
 /* Pricing */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
 @media (max-width:900px){.plans{grid-template-columns:1fr}}
@@ -205,6 +213,7 @@ footer{padding-block:36px;color:var(--muted);font-size:.92rem;display:flex;flex-
     <nav class="nav-links" aria-label="Secciones">
       <a href="#hallazgos"><span class="es">Qué encontramos</span><span class="en">What we find</span></a>
       <a href="#servicio"><span class="es">Servicio</span><span class="en">Service</span></a>
+      <a href="#confianza"><span class="es">Confianza</span><span class="en">Trust</span></a>
       <a href="#precios"><span class="es">Precios</span><span class="en">Pricing</span></a>
       <a href="#preguntas"><span class="es">Preguntas</span><span class="en">FAQ</span></a>
     </nav>
@@ -429,10 +438,66 @@ Row Level Security: <span class="hit">OFF</span>
     </div>
   </section>
 
+  <section class="block" id="confianza">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label"><span class="es">04 · Confianza</span><span class="en">04 · Trust</span></p>
+        <div>
+          <h2><span class="es">Tu código es tuyo. Nosotros lo cuidamos.</span><span class="en">Your code is yours. We guard it.</span></h2>
+          <p><span class="es">No entramos a tu código para llevárnoslo. Lo revisamos donde vive y trabajamos para que nadie más llegue a él.</span><span class="en">We don't get into your code to take it. We check it where it lives and work so nobody else can reach it.</span></p>
+        </div>
+      </div>
+      <div class="promise">
+        <svg width="44" height="48" viewBox="0 0 28 30" aria-hidden="true"><path d="M14 1 26 5.5v8.8c0 7.4-5 12.6-12 15.2C7 26.9 2 21.7 2 14.3V5.5L14 1Z" fill="var(--accent)"/><path d="m9 15 3.5 3.5L19 11.5" stroke="var(--on-accent)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <h3><span class="es">Tu código nunca sale de tu computadora.</span><span class="en">Your code never leaves your computer.</span></h3>
+          <p><span class="es">Es nuestra regla número uno y está en cada contrato.</span><span class="en">It's our number one rule, and it's in every contract.</span></p>
+        </div>
+      </div>
+      <div class="delivery">
+        <div class="deliv">
+          <h3><span class="es">Se revisa en tu computadora</span><span class="en">Checked on your computer</span></h3>
+          <p><span class="es">El análisis corre en tu equipo. Solo sale la lista de hallazgos, con las llaves tapadas, nunca tu código.</span><span class="en">The scan runs on your machine. Only the list of findings leaves it, with keys masked, never your code.</span></p>
+        </div>
+        <div class="deliv">
+          <h3><span class="es">Nunca lo copiamos ni lo guardamos</span><span class="en">We never copy or keep it</span></h3>
+          <p><span class="es">No guardamos tu código ni lo usamos para entrenar IA. Lo firmamos en el contrato con cláusula de confidencialidad.</span><span class="en">We don't keep your code or use it to train AI. We put it in the contract with a confidentiality clause.</span></p>
+        </div>
+        <div class="deliv">
+          <h3><span class="es">Acceso de solo lectura que tú controlas</span><span class="en">Read-only access you control</span></h3>
+          <p><span class="es">En GitHub el permiso no puede cambiar nada y lo quitas en un clic cuando quieras.</span><span class="en">On GitHub the access can't change anything, and you can revoke it in one click at any time.</span></p>
+        </div>
+        <div class="deliv">
+          <h3><span class="es">Los cambios los apruebas tú</span><span class="en">You approve every change</span></h3>
+          <p><span class="es">Cada arreglo llega como propuesta. Nada entra a tu código sin tu visto bueno.</span><span class="en">Every fix arrives as a proposal. Nothing goes into your code without your OK.</span></p>
+        </div>
+      </div>
+      <h3 class="pillar-head"><span class="es">Y lo protegemos de los demás</span><span class="en">And we protect it from everyone else</span></h3>
+      <div class="delivery">
+        <div class="deliv">
+          <h3><span class="es">Exposición</span><span class="en">Exposure</span></h3>
+          <p><span class="es">Repositorios públicos por error, copias olvidadas en servidores y carpetas de respaldo.</span><span class="en">Repos made public by mistake, forgotten copies on servers and backup folders.</span></p>
+        </div>
+        <div class="deliv">
+          <h3><span class="es">Accesos</span><span class="en">Access</span></h3>
+          <p><span class="es">Quién puede ver tu código: exempleados, contratistas y tokens viejos. Verificación en dos pasos y ramas protegidas.</span><span class="en">Who can see your code: former staff, contractors and old tokens. Two-step login and protected branches.</span></p>
+        </div>
+        <div class="deliv">
+          <h3><span class="es">Herramientas de IA</span><span class="en">AI tools</span></h3>
+          <p><span class="es">Configuraciones que mandan tu código a servicios externos o permiten usarlo para entrenar.</span><span class="en">Settings that send your code to outside services or allow it to be used for training.</span></p>
+        </div>
+        <div class="deliv">
+          <h3><span class="es">Fugas</span><span class="en">Leaks</span></h3>
+          <p><span class="es">Te avisamos si tu código o tus llaves aparecen publicados en internet.</span><span class="en">We alert you if your code or keys show up published online.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="precios">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label"><span class="es">04 · Precios</span><span class="en">04 · Pricing</span></p>
+        <p class="label"><span class="es">05 · Precios</span><span class="en">05 · Pricing</span></p>
         <div>
           <h2><span class="es">Un solo paquete: lo encontramos, lo corregimos y lo mantenemos así</span><span class="en">One package: we find it, fix it and keep it fixed</span></h2>
           <p><span class="es">Una cuota mensual según el número de proyectos. La corrección va incluida y tú no haces nada técnico: solo apruebas los cambios con un clic.</span><span class="en">One monthly fee based on the number of projects. The fix is included and you do nothing technical: you just approve the changes with a click.</span></p>
@@ -482,7 +547,7 @@ Row Level Security: <span class="hit">OFF</span>
   <section class="block" id="preguntas">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label"><span class="es">05 · Preguntas</span><span class="en">05 · FAQ</span></p>
+        <p class="label"><span class="es">06 · Preguntas</span><span class="en">06 · FAQ</span></p>
         <div>
           <h2><span class="es">Para quién es y cómo trabajamos</span><span class="en">Who it's for and how we work</span></h2>
         </div>
