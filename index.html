@@ -6,7 +6,10 @@
 <meta name="description" content="GuardMyCode revisa las apps y scripts que tu equipo hizo con IA: llaves expuestas, datos abiertos, corrección y protección. México y EE.UU.">
 <meta property="og:title" content="GuardMyCode">
 <meta property="og:description" content="Seguridad para código hecho con IA: diagnóstico, corrección y protección.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 30'%3E%3Cpath d='M14 1 26 5.5v8.8c0 7.4-5 12.6-12 15.2C7 26.9 2 21.7 2 14.3V5.5L14 1Z' fill='%232f6fb5'/%3E%3C/svg%3E">
+<meta property="og:image" content="https://guardmycode.com/icon-256.png">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="icon-256.png" type="image/png" sizes="256x256">
+<link rel="apple-touch-icon" href="icon-256.png">
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>GuardMyCode</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +20,7 @@
    and the hero shows a real report card that flips from "before" to "after". */
 :root{
   --bg:#f3f5f8; --surface:#ffffff; --ink:#132030; --muted:#566476; --line:#d8dfe7; --soft:#e9eef4;
-  --accent:#2f6fb5; --accent-ink:#1d4f8a; --on-accent:#ffffff;
+  --accent:#4338ca; --accent-ink:#3730a3; --on-accent:#ffffff;
   --code-bg:#0f1a26; --code-ink:#d7e3f0; --code-dim:#7f93a8; --code-hit:#ff8f7a;
   --sev-crit:#b42318; --sev-high:#d9480f; --sev-med:#b07d00; --sev-low:#2f6fb5;
   --g-a:#1a7f37; --g-b:#4d8b1f; --g-c:#b07d00; --g-d:#d9480f; --g-f:#b42318;
@@ -29,12 +32,12 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0c131b; --surface:#131d28; --ink:#e5ecf3; --muted:#9aa9b9; --line:#243243; --soft:#1a2633;
-  --accent:#6aa3e4; --accent-ink:#9cc4f1; --on-accent:#0c131b;
+  --accent:#a5b4fc; --accent-ink:#c7d2fe; --on-accent:#0c131b;
   --code-bg:#08101a; --code-ink:#d7e3f0; --code-dim:#7f93a8; --code-hit:#ff9d8a;
   --sev-low:#4f8fd6; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0c131b; --surface:#131d28; --ink:#e5ecf3; --muted:#9aa9b9; --line:#243243; --soft:#1a2633;
-  --accent:#6aa3e4; --accent-ink:#9cc4f1; --on-accent:#0c131b;
+  --accent:#a5b4fc; --accent-ink:#c7d2fe; --on-accent:#0c131b;
   --code-bg:#08101a; --code-ink:#d7e3f0; --code-dim:#7f93a8; --code-hit:#ff9d8a;
   --sev-low:#4f8fd6; color-scheme:dark}
 
@@ -207,8 +210,8 @@ footer{padding-block:36px;color:var(--muted);font-size:.92rem;display:flex;flex-
 <header class="top">
   <div class="wrap nav">
     <a class="brand" href="#inicio" aria-label="GuardMyCode">
-      <svg width="28" height="30" viewBox="0 0 28 30" aria-hidden="true"><path d="M14 1 26 5.5v8.8c0 7.4-5 12.6-12 15.2C7 26.9 2 21.7 2 14.3V5.5L14 1Z" fill="var(--accent)"/><path d="M9.5 10.5 6 15l3.5 4.5M18.5 10.5 22 15l-3.5 4.5M15.6 9.5l-3.2 11" stroke="var(--on-accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      GuardMyCode
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" aria-hidden="true" viewBox="0 0 64 64"><rect x="4" y="4" width="56" height="56" rx="16" fill="#4338ca"/><circle cx="30" cy="27" r="10" fill="none" stroke="#ffffff" stroke-width="6"/><path d="M40 17v19c0 8-5 12-11 12-4 0-7-1.5-9-4" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="14" r="11" fill="#22b573" stroke="#4338ca" stroke-width="3"/><path d="M45 14l3.5 3.5 6.5-7" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      guardmycode
     </a>
     <nav class="nav-links" aria-label="Secciones">
       <a href="#hallazgos"><span class="es">Qué encontramos</span><span class="en">What we find</span></a>
