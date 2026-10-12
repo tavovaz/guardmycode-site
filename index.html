@@ -144,6 +144,10 @@ pre.snip .hit{color:var(--code-hit);font-weight:600}
 .step{padding:28px 26px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .step + .step{border-left:1px solid var(--line)}
 @media (max-width:900px){.steps{grid-template-columns:1fr}.step + .step{border-left:0;border-top:1px solid var(--line)}}
+.dl{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:22px 26px}
+.dl .btn{font-size:1.05rem;padding:14px 24px}
+.dl-meta{color:var(--muted);font-size:.95rem;min-width:0}
+.dl-note{margin-top:14px;color:var(--muted);font-size:.92rem;max-width:62em}
 .step .num{font:800 .9rem var(--font-mono);color:var(--accent)}
 .step h3{font-size:var(--step-2);font-weight:800}
 .step .sub{color:var(--muted)}
@@ -225,7 +229,7 @@ footer{padding-block:36px;color:var(--muted);font-size:.92rem;display:flex;flex-
       <button type="button" id="lang-es" aria-pressed="true">ES</button>
       <button type="button" id="lang-en" aria-pressed="false">EN</button>
     </div>
-    <a class="btn btn-primary" href="#contacto"><span class="es">Diagnóstico sin costo</span><span class="en">Free assessment</span></a>
+    <a class="btn btn-primary" href="#descargar"><span class="es">Diagnóstico sin costo</span><span class="en">Free assessment</span></a>
   </div>
 </header>
 
@@ -245,7 +249,7 @@ footer{padding-block:36px;color:var(--muted);font-size:.92rem;display:flex;flex-
         <span>ChatGPT</span><span>Claude Code</span><span>GitHub Copilot</span><span>Cursor</span><span>Codex</span><span>Lovable</span><span>Bolt</span><span>v0</span>
       </div>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#contacto"><span class="es">Pedir diagnóstico</span><span class="en">Request an assessment</span></a>
+        <a class="btn btn-primary" href="#descargar"><span class="es">Diagnóstico gratis</span><span class="en">Free assessment</span></a>
         <a class="btn btn-ghost" href="#hallazgos"><span class="es">Ver ejemplos reales</span><span class="en">See real examples</span></a>
       </div>
     </div>
@@ -588,6 +592,42 @@ Row Level Security: <span class="hit">OFF</span>
     </div>
   </section>
 
+  <section class="block" id="descargar">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label"><span class="es">07 · Descarga</span><span class="en">07 · Download</span></p>
+        <div>
+          <h2><span class="es">Haz tu diagnóstico gratis</span><span class="en">Run your free assessment</span></h2>
+          <p><span class="es">Descarga GuardMyCode y revisa tus proyectos en tu propia computadora. Tu código no sale de ahí.</span><span class="en">Download GuardMyCode and check your projects on your own computer. Your code never leaves it.</span></p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="num">1</span>
+          <h3><span class="es">Descarga</span><span class="en">Download</span></h3>
+          <p class="sub"><span class="es">Un solo archivo para Windows 10 u 11. No necesita instalación.</span><span class="en">One file for Windows 10 or 11. Nothing to install.</span></p>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <h3><span class="es">Elige tus proyectos</span><span class="en">Pick your projects</span></h3>
+          <p class="sub"><span class="es">Agrega las carpetas o usa "Buscar proyectos", escribe el nombre de tu empresa y dale Revisar.</span><span class="en">Add the folders or use "Find projects", type your company name and click Review.</span></p>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <h3><span class="es">Recibe tu calificación</span><span class="en">Get your grade</span></h3>
+          <p class="sub"><span class="es">Calificación de la A a la F y reporte en PDF. Si quieres que lo corrijamos, mándanos el .zip.</span><span class="en">An A-to-F grade and a PDF report. If you want us to fix it, send us the .zip.</span></p>
+        </div>
+      </div>
+
+      <div class="dl">
+        <a class="btn btn-primary" id="dl-btn" href="https://github.com/tavovaz/guardmycode-site/releases/latest/download/GuardMyCode.exe"><span class="es">Descargar para Windows</span><span class="en">Download for Windows</span></a>
+        <span class="dl-meta" id="dl-meta"><span class="es">Windows 10 y 11 · Gratis</span><span class="en">Windows 10 and 11 · Free</span></span>
+      </div>
+      <p class="dl-note"><span class="es">Mientras terminamos de firmar el programa, Windows puede mostrar "Windows protegió su PC". Elige <strong>Más información</strong> y luego <strong>Ejecutar de todas formas</strong>.</span><span class="en">While we finish signing the program, Windows may show "Windows protected your PC". Choose <strong>More info</strong>, then <strong>Run anyway</strong>.</span></p>
+    </div>
+  </section>
+
   <section class="block" id="contacto" style="border-top:0">
     <div class="wrap">
       <div class="contact">
@@ -644,6 +684,16 @@ Row Level Security: <span class="hit">OFF</span>
   document.getElementById("rep-after").addEventListener("click", function(){ show(true); });
   document.getElementById("yr").textContent = new Date().getFullYear();
 })();
+
+// Version and size of the newest approved download.
+fetch("https://api.github.com/repos/tavovaz/guardmycode-site/releases/latest").then(r => r.ok ? r.json() : null).then(rel => {
+  if (!rel) return;
+  const exe = (rel.assets || []).find(a => a.name === "GuardMyCode.exe");
+  const ver = (rel.tag_name || "").replace(/^v/, "").replace(/[^\w.-]/g, "");
+  const mb = exe ? Math.round(exe.size / 1048576) + " MB · " : "";
+  document.getElementById("dl-meta").innerHTML =
+    '<span class="es">Versión ' + ver + ' · ' + mb + 'Windows 10 y 11 · Gratis</span><span class="en">Version ' + ver + ' · ' + mb + 'Windows 10 and 11 · Free</span>';
+}).catch(() => {});
 </script>
 </body>
 </html>
