@@ -56,12 +56,13 @@ a{color:var(--accent-ink)}
 /* Nav */
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:20px;padding-block:14px}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:1.12rem;color:var(--ink);text-decoration:none;margin-right:auto}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1.6rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;margin-right:auto}
 .brand svg{flex:none}
+@media (max-width:480px){.brand{font-size:1.35rem}.brand svg{width:40px;height:40px}}
 .nav-links{display:flex;gap:22px}
-.nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.98rem}
+.nav-links a{white-space:nowrap;color:var(--muted);text-decoration:none;font-weight:600;font-size:.98rem}
 .nav-links a:hover{color:var(--ink)}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.lang{flex:none;display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
 .lang button{border:0;background:none;color:var(--muted);font:600 .82rem var(--font-mono);padding:6px 11px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .btn{display:inline-flex;align-items:center;gap:8px;border-radius:8px;padding:12px 20px;font-weight:700;font-size:1rem;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--font-body)}
@@ -69,8 +70,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backgroun
 .btn-primary:hover{filter:brightness(1.08)}
 .btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
 .btn-ghost:hover{border-color:var(--muted)}
-.nav .btn{padding:9px 16px;font-size:.94rem}
-@media (max-width:860px){.nav-links{display:none}}
+.nav .btn{padding:9px 16px;font-size:.94rem;white-space:nowrap;flex:none}
+@media (max-width:1260px){.nav-links{display:none}}
 @media (max-width:480px){.nav .btn{display:none}}
 
 /* Hero */
@@ -210,7 +211,7 @@ footer{padding-block:36px;color:var(--muted);font-size:.92rem;display:flex;flex-
 <header class="top">
   <div class="wrap nav">
     <a class="brand" href="#inicio" aria-label="GuardMyCode">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" aria-hidden="true" viewBox="0 0 64 64"><rect x="4" y="4" width="56" height="56" rx="16" fill="#4338ca"/><circle cx="30" cy="27" r="10" fill="none" stroke="#ffffff" stroke-width="6"/><path d="M40 17v19c0 8-5 12-11 12-4 0-7-1.5-9-4" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="14" r="11" fill="#22b573" stroke="#4338ca" stroke-width="3"/><path d="M45 14l3.5 3.5 6.5-7" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" aria-hidden="true" viewBox="0 0 64 64"><rect x="4" y="4" width="56" height="56" rx="16" fill="#4338ca"/><circle cx="30" cy="27" r="10" fill="none" stroke="#ffffff" stroke-width="6"/><path d="M40 17v19c0 8-5 12-11 12-4 0-7-1.5-9-4" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="14" r="11" fill="#22b573" stroke="#4338ca" stroke-width="3"/><path d="M45 14l3.5 3.5 6.5-7" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
       guardmycode
     </a>
     <nav class="nav-links" aria-label="Secciones">
