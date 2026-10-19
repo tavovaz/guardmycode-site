@@ -59,7 +59,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backgroun
 .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1.6rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;margin-right:auto}
 .brand svg{flex:none}
 @media (max-width:480px){.brand{font-size:1.35rem}.brand svg{width:40px;height:40px}}
-.nav-links{display:flex;gap:22px}
+.nav-links{display:flex;gap:18px}
 .nav-links a{white-space:nowrap;color:var(--muted);text-decoration:none;font-weight:600;font-size:.98rem}
 .nav-links a:hover{color:var(--ink)}
 .lang{flex:none;display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
@@ -71,7 +71,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backgroun
 .btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
 .btn-ghost:hover{border-color:var(--muted)}
 .nav .btn{padding:9px 16px;font-size:.94rem;white-space:nowrap;flex:none}
-@media (max-width:1260px){.nav-links{display:none}}
+@media (max-width:1410px){.nav-links{display:none}}
 @media (max-width:480px){.nav .btn{display:none}}
 
 /* Hero */
@@ -204,6 +204,34 @@ pre.snip .hit{color:var(--code-hit);font-weight:600}
 .contact .box .val{font:600 1rem var(--font-mono)}
 footer{padding-block:36px;color:var(--muted);font-size:.92rem;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
+/* Examples */
+.case{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(20px,4vw,40px);align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,4vw,32px)}
+.case > *{min-width:0}
+@media (max-width:820px){.case{grid-template-columns:1fr}}
+.case h3{font-size:var(--step-2);font-weight:800;margin-top:8px}
+.case ul{margin:16px 0 0;padding-left:1.1em;display:grid;gap:8px;color:var(--muted)}
+.case ul b{color:var(--ink)}
+.case-grades{display:grid;gap:14px}
+.case-row{display:flex;gap:14px;align-items:center}
+.case-row .g{flex:none;width:56px;height:56px;border-radius:12px;display:grid;place-items:center;color:#fff;font:800 1.9rem var(--font-display)}
+.mini{display:flex;gap:6px;margin-top:4px}
+.mini span{min-width:44px;text-align:center;border-radius:6px;padding:4px 6px;color:#fff;font:800 1.05rem var(--font-display);font-variant-numeric:tabular-nums}
+.mini .z{background:var(--soft);color:var(--muted)}
+.mini-key{font-size:.88rem;color:var(--muted);line-height:1.4}
+.samples{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.samples{grid-template-columns:1fr}}
+.sample{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.sample a{display:block;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 14px 30px -22px rgba(10,30,60,.4)}
+.sample img{display:block;width:100%;height:280px;object-fit:cover;object-position:top}
+@media (max-width:900px){.sample img{height:auto;aspect-ratio:4/3}}
+.sample a:hover{border-color:var(--accent)}
+.sample figcaption{display:grid;gap:2px;color:var(--muted);font-size:.95rem}
+.sample figcaption b{color:var(--ink);font-size:1.05rem}
+.downloads{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.downloads > span:not(.label){display:flex;flex-wrap:wrap;gap:10px}
+.downloads a{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-weight:600;text-decoration:none}
+.downloads a:hover{border-color:var(--accent)}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -216,6 +244,7 @@ footer{padding-block:36px;color:var(--muted);font-size:.92rem;display:flex;flex-
     </a>
     <nav class="nav-links" aria-label="Secciones">
       <a href="#hallazgos"><span class="es">Qué encontramos</span><span class="en">What we find</span></a>
+      <a href="#ejemplos"><span class="es">Ejemplos</span><span class="en">Examples</span></a>
       <a href="#servicio"><span class="es">Servicio</span><span class="en">Service</span></a>
       <a href="#confianza"><span class="es">Confianza</span><span class="en">Trust</span></a>
       <a href="#precios"><span class="es">Precios</span><span class="en">Pricing</span></a>
@@ -246,7 +275,7 @@ footer{padding-block:36px;color:var(--muted);font-size:.92rem;display:flex;flex-
       </div>
       <div class="cta-row">
         <a class="btn btn-primary" href="#contacto"><span class="es">Pedir diagnóstico</span><span class="en">Request an assessment</span></a>
-        <a class="btn btn-ghost" href="#hallazgos"><span class="es">Ver ejemplos reales</span><span class="en">See real examples</span></a>
+        <a class="btn btn-ghost" href="#ejemplos"><span class="es">Ver ejemplos reales</span><span class="en">See real examples</span></a>
       </div>
     </div>
 
@@ -361,10 +390,76 @@ Row Level Security: <span class="hit">OFF</span>
     </div>
   </section>
 
+  <section class="block" id="ejemplos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label"><span class="es">02 · Ejemplos</span><span class="en">02 · Examples</span></p>
+        <div>
+          <h2><span class="es">Resultados reales, no promesas</span><span class="en">Real results, not promises</span></h2>
+          <p><span class="es">Un caso de un cliente real y los reportes tal como los entrega GuardMyCode.</span><span class="en">A real client case and the reports exactly as GuardMyCode delivers them.</span></p>
+        </div>
+      </div>
+
+      <article class="case">
+        <div class="case-text">
+          <p class="label"><span class="es">Caso real · Empresa de servicios</span><span class="en">Real case · Services company</span></p>
+          <h3><span class="es">De D a A sin detener la operación</span><span class="en">From D to A without stopping operations</span></h3>
+          <ul>
+            <li><span class="es"><b>3 sistemas en producción</b>, cerca de 1,000 archivos.</span><span class="en"><b>3 systems in production</b>, about 1,000 files.</span></li>
+            <li><span class="es"><b>2 críticos y 14 altos a cero:</b> librerías actualizadas, conexión a la base de datos verificada y un respaldo viejo con contraseñas eliminado.</span><span class="en"><b>2 critical and 14 high down to zero:</b> libraries updated, database connection verified and an old backup with passwords removed.</span></li>
+            <li><span class="es"><b>Cada cambio lo aprobó el cliente.</b> Uno falló en producción y se deshizo en minutos.</span><span class="en"><b>The client approved every change.</b> One failed in production and was undone in minutes.</span></li>
+          </ul>
+        </div>
+        <div class="case-grades">
+          <div class="case-row">
+            <span class="g" style="background:var(--g-d)">D</span>
+            <div>
+              <p class="label"><span class="es">Antes</span><span class="en">Before</span></p>
+              <div class="mini"><span class="t-crit">2</span><span class="t-high">14</span><span class="t-med">6</span><span class="t-low">5</span></div>
+            </div>
+          </div>
+          <div class="case-row">
+            <span class="g" style="background:var(--g-a)">A</span>
+            <div>
+              <p class="label"><span class="es">Después</span><span class="en">After</span></p>
+              <div class="mini"><span class="z">0</span><span class="z">0</span><span class="z">0</span><span class="t-low">3</span></div>
+            </div>
+          </div>
+          <p class="mini-key"><span class="es">Críticos · Altos · Medios · Bajos. Los 3 bajos son herramientas de desarrollo que no llegan al usuario.</span><span class="en">Critical · High · Medium · Low. The 3 low ones are development tools that never reach users.</span></p>
+        </div>
+      </article>
+
+      <h3 class="pillar-head"><span class="es">Así se ve el reporte</span><span class="en">What the report looks like</span></h3>
+      <div class="samples">
+        <figure class="sample">
+          <a href="ejemplos/2-diagnostico-extendido-ejemplo.pdf" class="es" target="_blank" rel="noopener"><img src="ejemplos/resumen-es.png" width="1275" height="1188" loading="lazy" alt="Resumen para la dirección: calificación F con 5 críticos, 9 altos, 4 medios y 2 bajos, y los problemas más urgentes"></a>
+          <a href="ejemplos/2-full-report-example.pdf" class="en" target="_blank" rel="noopener"><img src="ejemplos/summary-en.png" width="1275" height="1188" loading="lazy" alt="Executive summary: grade F with 5 critical, 9 high, 4 medium and 2 low, and the most urgent problems"></a>
+          <figcaption><b><span class="es">Resumen para la dirección</span><span class="en">Executive summary</span></b><span class="es">Una letra, los conteos y lo más urgente, en lenguaje claro.</span><span class="en">One letter, the counts and what is most urgent, in plain language.</span></figcaption>
+        </figure>
+        <figure class="sample">
+          <a href="ejemplos/2-diagnostico-extendido-ejemplo.pdf" class="es" target="_blank" rel="noopener"><img src="ejemplos/hallazgos-es.png" width="1148" height="957" loading="lazy" alt="Tabla de hallazgos con severidad, ubicación, evidencia enmascarada y cómo corregir"></a>
+          <a href="ejemplos/2-full-report-example.pdf" class="en" target="_blank" rel="noopener"><img src="ejemplos/findings-en.png" width="1148" height="957" loading="lazy" alt="Findings table with severity, location, masked evidence and how to fix"></a>
+          <figcaption><b><span class="es">Cada hallazgo, con su arreglo</span><span class="en">Every finding, with its fix</span></b><span class="es">Archivo y línea exactos. Las llaves aparecen enmascaradas.</span><span class="en">Exact file and line. Keys are shown masked.</span></figcaption>
+        </figure>
+        <figure class="sample">
+          <a href="ejemplos/3-plan-de-correccion-ejemplo.pdf" class="es" target="_blank" rel="noopener"><img src="ejemplos/plan-es.png" width="1275" height="941" loading="lazy" alt="Plan de corrección: sección urgente con llaves expuestas, dónde revocarlas, quién y tiempo aproximado"></a>
+          <a href="ejemplos/3-fix-plan-example.pdf" class="en" target="_blank" rel="noopener"><img src="ejemplos/plan-en.png" width="1275" height="941" loading="lazy" alt="Fix plan: urgent section with exposed keys, where to revoke them, who and approximate time"></a>
+          <figcaption><b><span class="es">Plan de corrección</span><span class="en">Fix plan</span></b><span class="es">Qué hacer, quién lo hace y cuánto tarda, por urgencia.</span><span class="en">What to do, who does it and how long, by urgency.</span></figcaption>
+        </figure>
+      </div>
+      <div class="downloads">
+        <span class="label"><span class="es">Descarga los ejemplos en PDF</span><span class="en">Download the examples as PDF</span></span>
+        <span class="es"><a href="ejemplos/1-diagnostico-inicial-ejemplo.pdf" target="_blank" rel="noopener">Diagnóstico gratis</a><a href="ejemplos/2-diagnostico-extendido-ejemplo.pdf" target="_blank" rel="noopener">Reporte completo</a><a href="ejemplos/3-plan-de-correccion-ejemplo.pdf" target="_blank" rel="noopener">Plan de corrección</a></span>
+        <span class="en"><a href="ejemplos/1-free-assessment-example.pdf" target="_blank" rel="noopener">Free assessment</a><a href="ejemplos/2-full-report-example.pdf" target="_blank" rel="noopener">Full report</a><a href="ejemplos/3-fix-plan-example.pdf" target="_blank" rel="noopener">Fix plan</a></span>
+      </div>
+      <p class="fine"><span class="es">Los reportes de ejemplo son de un proyecto de prueba (una tienda en línea) con datos y llaves ficticios. El caso real se muestra sin nombre para proteger al cliente.</span><span class="en">The sample reports come from a test project (an online store) with fictitious data and keys. The real case is shown without a name to protect the client.</span></p>
+    </div>
+  </section>
+
   <section class="block" id="servicio">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label"><span class="es">02 · Servicio</span><span class="en">02 · Service</span></p>
+        <p class="label"><span class="es">03 · Servicio</span><span class="en">03 · Service</span></p>
         <div>
           <h2><span class="es">Diagnóstico, corrección y protección</span><span class="en">Assessment, fix and protection</span></h2>
           <p><span class="es">Empezamos por ver qué hay. Después lo dejamos corregido y lo mantenemos así mientras tu equipo sigue construyendo con IA.</span><span class="en">We start by seeing what's there. Then we fix it and keep it that way while your team keeps building with AI.</span></p>
@@ -412,7 +507,7 @@ Row Level Security: <span class="hit">OFF</span>
   <section class="block" id="calificacion">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label"><span class="es">03 · Calificación</span><span class="en">03 · Grading</span></p>
+        <p class="label"><span class="es">04 · Calificación</span><span class="en">04 · Grading</span></p>
         <div>
           <h2><span class="es">Una calificación que dirección entiende</span><span class="en">A grade leadership understands</span></h2>
           <p><span class="es">Cada proyecto recibe una letra. Sin jerga: sabes en qué estado está y qué tan urgente es.</span><span class="en">Every project gets a letter. No jargon: you know where it stands and how urgent it is.</span></p>
@@ -445,7 +540,7 @@ Row Level Security: <span class="hit">OFF</span>
   <section class="block" id="confianza">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label"><span class="es">04 · Confianza</span><span class="en">04 · Trust</span></p>
+        <p class="label"><span class="es">05 · Confianza</span><span class="en">05 · Trust</span></p>
         <div>
           <h2><span class="es">Tu código es tuyo. Nosotros lo cuidamos.</span><span class="en">Your code is yours. We guard it.</span></h2>
           <p><span class="es">No entramos a tu código para llevárnoslo. Lo revisamos donde vive y trabajamos para que nadie más llegue a él.</span><span class="en">We don't get into your code to take it. We check it where it lives and work so nobody else can reach it.</span></p>
@@ -501,7 +596,7 @@ Row Level Security: <span class="hit">OFF</span>
   <section class="block" id="precios">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label"><span class="es">05 · Precios</span><span class="en">05 · Pricing</span></p>
+        <p class="label"><span class="es">06 · Precios</span><span class="en">06 · Pricing</span></p>
         <div>
           <h2><span class="es">Un solo paquete: lo encontramos, lo corregimos y lo mantenemos así</span><span class="en">One package: we find it, fix it and keep it fixed</span></h2>
           <p><span class="es">Una cuota mensual según el número de proyectos. La corrección va incluida y tú no haces nada técnico: solo apruebas los cambios con un clic.</span><span class="en">One monthly fee based on the number of projects. The fix is included and you do nothing technical: you just approve the changes with a click.</span></p>
@@ -551,7 +646,7 @@ Row Level Security: <span class="hit">OFF</span>
   <section class="block" id="preguntas">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label"><span class="es">06 · Preguntas</span><span class="en">06 · FAQ</span></p>
+        <p class="label"><span class="es">07 · Preguntas</span><span class="en">07 · FAQ</span></p>
         <div>
           <h2><span class="es">Para quién es y cómo trabajamos</span><span class="en">Who it's for and how we work</span></h2>
         </div>
